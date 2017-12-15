@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>FastDNS Server</title>
+
+  <meta name="description" content="FastDNS Server">
+  <meta name="author" content="Aleksandr Kudriavcev">
+
+  <link href="/static/content/bootstrap.min.css" rel="stylesheet">
+  <link href="/static/content/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <nav class="navbar navbar-inverse" style="color:#96a4dd">
+          <h3 class="text-center">FastDNS</h3></nav>
+      </div>
+
+      <div class="col-md-6">
+        <nav class="navbar navbar-default" style="background-color:#dfe4ec;">
+          <h4 class="text-center" style="color: #273154; margin-top: 15px">Наблюдение</h4>
+        </nav>
+        <nav class="navbar navbar-default" >
+          <ul class="nav nav-tabs">
+            <li class="active">
+              <a href="#panel-986544" data-toggle="tab">Лог DNS</a>
+            </li>
+            <li>
+              <a href="#panel-240220" data-toggle="tab">Запрещенные домены</a>
+            </li>
+            <li>
+              <a href="#panel-240221" data-toggle="tab">Разрешенные домены</a>
+            </li>
+            <li>
+              <a href="#panel-240222" data-toggle="tab">Кешированные домены</a>
+            </li>
+          </ul>
+          <div class="tab-content">
+            <div class="tab-pane active" id="panel-986544">
+              <div class="form-group">
+                 <textarea style="height:452px;  font-size: 8pt"class="form-control" rows="5" id="tar1">{{logs}}</textarea>
+              </div>
+            </div>
+            <div class="tab-pane" id="panel-240220">
+              <div class="form-group">
+                 <textarea style="height:452px; font-size: 8pt"class="form-control" rows="15" id="tar2">{{bans}}</textarea>
+              </div>
+            </div>
+            <div class="tab-pane" id="panel-240221">
+              <div class="form-group">
+                 <textarea style="height:452px; font-size: 8pt"class="form-control" rows="15" id="tar3">{{white1}}</textarea>
+              </div>
+            </div>
+            <div class="tab-pane" id="panel-240222">
+              <div class="form-group">
+                 <textarea style="height:452px; font-size: 8pt"class="form-control" rows="15" id="tar4">{{cache1}}</textarea>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <div class="col-md-6">
+        <nav class="navbar navbar-default" style="background-color:#dfe4ec;">
+          <h4 class="text-center" style="color: #273154; margin-top: 15px">Управление</h4>
+        </nav>
+        <nav class="navbar navbar-default">
+          <h5 class="text-center" style="color:#3e72a8">Блокировка/Амнистия(домен=ip адрес)</h5>
+          <form action="/inp" method="get">
+            <div class="form-group">
+              <label for="edit">Текст условия:</label>
+              <input type="text" name="t" class="form-control" id="edit">
+                 <button type="submit"  name="b" value="bt1" id="bt1" class="btn btn-block btn-default center-block">Добавить в разрешенные по части текста</button>
+              <button type="submit" name="b" value="bt2" id="bt2" class="btn btn-block btn-default center-block">Добавить в запрещенные по части текста</button>
+            </div>
+          </form>
+        </nav>
+
+        <nav class="navbar navbar-default">
+          <h5 class="text-center" style="color:#3e72a8">Добавить новое соответствие (домен=ip адрес)</h5>
+          <form action="/add" method="get">
+            <div class="form-group">
+              <label for="edit2">Домен:</label>
+              <input type="text" name="t2" class="form-control" id="edit2">
+              <label for="edit3">IP адрес:</label>
+              <input type="text" name="t3" class="form-control" id="edit3">
+              <button type="submit" style="margin-top:15px" name="b3" value="bt3" id="bt3" class="btn btn-default center-block btn-block">Добавить</button>
+            </div>
+          </form>
+        </nav>
+
+  <nav class="navbar navbar-default">
+      <h5 class="text-center" style="color:#3e72a8">Режим работы сервера</h5>
+       <button type="submit"  name="b" value="bt1" id="bt1" class="btn btn-default center-block btn-block">Не давать IP адреса никому, кроме разрешенных доменов</button>
+       <button type="submit" name="b" value="bt2" id="bt2" class="btn btn-default center-block btn-block">Давать IP адреса всем, кроме запрещенных</button>
+        </nav>
+      </div>
+
+
+
+    </div>
+  </div>
+
+
+
+  <script src="/static/scripts/jquery.min.js"></script>
+  <script src="/static/scripts/bootstrap.min.js"></script>
+  <script src="/static/scripts/scripts.js"></script>
+  <script>
+   document.getElementById("tar1").scrollTop=document.getElementById("tar1").scrollHeight;
+   document.getElementById("tar2").scrollTop=document.getElementById("tar2").scrollHeight;
+   document.getElementById("tar3").scrollTop=document.getElementById("tar3").scrollHeight;
+   document.getElementById("tar4").scrollTop=document.getElementById("tar4").scrollHeight;
+  </script>
+</body>
+
+</html>

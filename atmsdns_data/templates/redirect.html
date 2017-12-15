@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+		<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="ATMSDNS Server">
+		<meta name="author" content="Aleksandr Kudriavcev">
+	  <link href="/static/content/bootstrap.min.css" rel="stylesheet">
+		  <link href="/static/content/style.css" rel="stylesheet">
+				  <title>ATMSDNS Server</title>
+	</head>
+	<body>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<nav class="navbar navbar-inverse" style="color:#96a4dd">
+				<h3 class="text-center">ATMSDNS</h3></nav>
+		</div>
+
+		<div class="col-md-12">
+			<div class="alert alert-success alert-dismissable">
+				<h4>
+					Сейчас, вы автоматически вернетесь на главную страницу.
+				</h4> <strong> {{ inform }} </strong>
+			</div>
+			<div class="progress active progress-striped">
+				<div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="70"
+				  aria-valuemin="0" aria-valuemax="100" style="width:0%" id="prbr">
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+setTimeout(function(){document.getElementById("prbr").style.width = "10%"}, 200);
+setTimeout(function(){document.getElementById("prbr").style.width = "20%"}, 500);
+setTimeout(function(){document.getElementById("prbr").style.width = "30%"}, 800);
+setTimeout(function(){document.getElementById("prbr").style.width = "40%"}, 1000);
+setTimeout(function(){document.getElementById("prbr").style.width = "50%"}, 1300);
+setTimeout(function(){document.getElementById("prbr").style.width = "60%"}, 1600);
+setTimeout(function(){document.getElementById("prbr").style.width = "70%"}, 1900);
+setTimeout(function(){document.getElementById("prbr").style.width = "80%"}, 2200);
+setTimeout(function(){document.getElementById("prbr").style.width = "90%"}, 2500);
+setTimeout(function(){document.getElementById("prbr").style.width = "100%"}, 2700);
+setTimeout(function(){window.location.href='/home';}, 2900);
+</script>
+</body>
+</html>

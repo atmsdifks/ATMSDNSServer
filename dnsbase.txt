@@ -1,0 +1,15 @@
+кнц                бпелъ      хо бунд    днлем      оепедюм хо   йнлюмдю
+CREATE TABLE LOG(TIME TEXT, INIP TEXT, DOMEN TEXT, SENDIP TEXT, CMD TEXT)
+
+
+гюопеыеммше
+CREATE TABLE BAN(DOMEN TEXT)
+
+пюгпеьеммше
+CREATE TABLE WHITE(DOMEN TEXT)
+
+йщь
+CREATE TABLE CACHE(DOMEN TEXT,SENDIP TEXT)
+
+пЕФХЛ ПЮАНРШ
+CREATE TABLE JOB(JOB TEXT)

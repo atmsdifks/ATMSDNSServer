@@ -1,0 +1,1 @@
+delete from ban where domen = "trinuxy"
